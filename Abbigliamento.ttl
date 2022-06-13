@@ -1,0 +1,1093 @@
+@prefix : <http://www.semanticweb.org/talliente/abbigliamento#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix swrl: <http://www.w3.org/2003/11/swrl#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix swrla: <http://swrl.stanford.edu/ontologies/3.3/swrla.owl#> .
+@prefix swrlb: <http://www.w3.org/2003/11/swrlb#> .
+@prefix objectrole: <http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#> .
+@prefix abbigliamento: <http://www.semanticweb.org/talliente/abbigliamento#> .
+@prefix cpannotationschema: <http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#> .
+@base <http://www.semanticweb.org/talliente/abbigliamento> .
+
+<http://www.semanticweb.org/talliente/abbigliamento> rdf:type owl:Ontology ;
+                                                      owl:imports <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl> ;
+                                                      dc:creator "Martina Talliente"@it ;
+                                                      dc:date "2022-05-11"@it ;
+                                                      dc:description "Ontologia dedicata all'abbigliamento, tessuti, materiali che lo compongono, alle persone che contribuiscono alla sua produzione e vendita, alle stagioni a cui è associato."@it ;
+                                                      dc:title "Abbigliamento 2022"@it ;
+                                                      vann:preferredNamespacePrefix "a22"@it ,
+                                                                                    "http://www.semanticweb.org/talliente/abbigliamento#"@it ;
+                                                      rdfs:label "Abbigliamento"@it .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/date
+dc:date rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/description
+dc:description rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/dc/elements/1.1/title
+dc:title rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespacePrefix
+vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+vann:preferredNamespaceUri rdf:type owl:AnnotationProperty .
+
+
+###  http://swrl.stanford.edu/ontologies/3.3/swrla.owl#isRuleEnabled
+swrla:isRuleEnabled rdf:type owl:AnnotationProperty .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#hasRole
+objectrole:hasRole rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#isRoleOf
+objectrole:isRoleOf rdf:type owl:ObjectProperty ,
+                             owl:FunctionalProperty .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#abbinatoCon
+abbigliamento:abbinatoCon rdf:type owl:ObjectProperty ,
+                                   owl:SymmetricProperty ;
+                          rdfs:domain abbigliamento:Abbigliamento ;
+                          rdfs:range abbigliamento:Abbigliamento ;
+                          rdfs:comment "Relationship used to match clothing"@en ,
+                                       "Relazione usata per abbinare i capi di abbigliamento"@it ;
+                          rdfs:label "abbinato con"@it ,
+                                     "matched with"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#associato
+abbigliamento:associato rdf:type owl:ObjectProperty ;
+                        rdfs:domain abbigliamento:Tessuto ;
+                        rdfs:range abbigliamento:Stagione ;
+                        rdfs:comment "relationship that associates a fabric with a season"@en ,
+                                     "relazione che associa un tessuto a una stagione"@it ;
+                        rdfs:label "associated"@en ,
+                                   "associato"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#compone
+abbigliamento:compone rdf:type owl:ObjectProperty ;
+                      owl:inverseOf abbigliamento:compostoDa ;
+                      rdfs:domain abbigliamento:Materiale ;
+                      rdfs:range abbigliamento:Tessuto ;
+                      rdfs:comment "relationship that binds the material used in the composition of a fabric to the fabric"@en ,
+                                   "relazione che lega il materiale usato nella composizione di un tessuto al tessuto"@it ;
+                      rdfs:label "compone"@it ,
+                                 "composes"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#compostoDa
+abbigliamento:compostoDa rdf:type owl:ObjectProperty ;
+                         rdfs:domain abbigliamento:Tessuto ;
+                         rdfs:range abbigliamento:Materiale ;
+                         rdfs:comment "relationship that binds a fabric to the material it is made of"@en ,
+                                      "relazione che lega un tessuto al materiale di cui è composto"@it ;
+                         rdfs:label "composed of"@en ,
+                                    "composto da"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#creatoDa
+abbigliamento:creatoDa rdf:type owl:ObjectProperty ;
+                       rdfs:domain abbigliamento:Abbigliamento ;
+                       rdfs:range <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> ;
+                       owl:propertyChainAxiom ( abbigliamento:progettatoDa
+                                                objectrole:isRoleOf
+                                              ) ;
+                       rdfs:comment "relationship indicating which clothing is created by an agent"@en ,
+                                    "relazione che indica quale abbigliamento è creato da un agente"@it ;
+                       rdfs:label "created by"@en ,
+                                  "creato da"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#fattoDi
+abbigliamento:fattoDi rdf:type owl:ObjectProperty ;
+                      owl:inverseOf abbigliamento:tessutoDi ;
+                      rdf:type owl:FunctionalProperty ;
+                      rdfs:domain abbigliamento:Abbigliamento ;
+                      rdfs:range abbigliamento:Tessuto ;
+                      rdfs:comment "relationship that binds clothing to the fabric it is made of"@en ,
+                                   "relazione che lega l'abbigliamento al tessuto di cui è fatto"@it ;
+                      rdfs:label "fatto di"@it ,
+                                 "made of"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#haAbbigliamento
+abbigliamento:haAbbigliamento rdf:type owl:ObjectProperty ;
+                              owl:inverseOf abbigliamento:indossatoIn ;
+                              rdfs:domain abbigliamento:Stagione ;
+                              rdfs:range abbigliamento:Abbigliamento ;
+                              rdfs:comment "relationship that binds a season to clothing"@en ,
+                                           "relazione che lega una stagione all'abbigliamento"@it ;
+                              rdfs:label "ha abbigliamento"@it ,
+                                         "has clothing"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#haMaterialePrincipale
+abbigliamento:haMaterialePrincipale rdf:type owl:ObjectProperty ,
+                                             owl:FunctionalProperty ;
+                                    rdfs:domain abbigliamento:Abbigliamento ;
+                                    rdfs:range abbigliamento:Materiale ;
+                                    rdfs:comment "relationship that binds the clothing to the material, in particular to the main material used in its creation"@en ,
+                                                 "relazione che lega l'abbigliamento al materiale, in particolare al materiale principale usato nella sua realizzazione"@it ;
+                                    rdfs:label "ha materiale principale"@it ,
+                                               "has main material"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#idealePer
+abbigliamento:idealePer rdf:type owl:ObjectProperty ;
+                        rdfs:subPropertyOf abbigliamento:associato ;
+                        rdfs:domain abbigliamento:TessutoPuro ;
+                        rdfs:range abbigliamento:Stagione ;
+                        rdfs:comment "relationship that binds the pure fabric ideal for one season to the season"@en ,
+                                     "relazione che lega il tessuto puro ideale per una stagione alla stagione"@it ;
+                        rdfs:label "ideal for"@en ,
+                                   "ideale per"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#indossatoIn
+abbigliamento:indossatoIn rdf:type owl:ObjectProperty ;
+                          rdfs:domain abbigliamento:Abbigliamento ;
+                          rdfs:range abbigliamento:Stagione ;
+                          rdfs:comment "relationship that binds clothing in the season in which it is worn"@en ,
+                                       "relazione che lega l'abbigliamento nella stagione in cui è indossato"@it ;
+                          rdfs:label "indossato in"@it ,
+                                     "worn in"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#progetta
+abbigliamento:progetta rdf:type owl:ObjectProperty ;
+                       owl:inverseOf abbigliamento:progettatoDa ;
+                       rdfs:domain abbigliamento:Stilista ;
+                       rdfs:range abbigliamento:Abbigliamento ;
+                       rdfs:comment "relationship indicating which stylist designs clothing"@en ,
+                                    "relazione che indica quale stilista progetta un abbigliamento"@it ;
+                       rdfs:label "designs"@en ,
+                                  "progetta"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#progettatoDa
+abbigliamento:progettatoDa rdf:type owl:ObjectProperty ,
+                                    owl:FunctionalProperty ;
+                           rdfs:domain abbigliamento:Abbigliamento ;
+                           rdfs:range abbigliamento:Stilista ;
+                           rdfs:comment "relationship indicating clothing designed by a stylist"@en ,
+                                        "relazione che indica l'abbigliamento progettato da uno stilista"@it ;
+                           rdfs:label "dedsigns by"@en ,
+                                      "progettato da"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#tessutoDi
+abbigliamento:tessutoDi rdf:type owl:ObjectProperty ;
+                        rdfs:domain abbigliamento:Tessuto ;
+                        rdfs:range abbigliamento:Abbigliamento ;
+                        rdfs:comment "relationship indicating which fabric is used to create a clothing"@en ,
+                                     "relazione che indica quale tessuto è usato per creare un abbigliamento"@it ;
+                        rdfs:label "fabric of"@en ,
+                                   "tessuto di"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#vende
+abbigliamento:vende rdf:type owl:ObjectProperty ;
+                    owl:inverseOf abbigliamento:vendutoDa ;
+                    rdfs:domain abbigliamento:Venditore ;
+                    rdfs:range abbigliamento:Abbigliamento ;
+                    rdfs:comment "relationship that indicates the vendor selling clothing"@en ,
+                                 "relazione che indica il venditore che vende un abbigliamento"@it ;
+                    rdfs:label "sells"@en ,
+                               "vende"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#vendutoDa
+abbigliamento:vendutoDa rdf:type owl:ObjectProperty ;
+                        rdfs:domain abbigliamento:Abbigliamento ;
+                        rdfs:range abbigliamento:Venditore ;
+                        rdfs:comment "relationship that links the clothing sold by a seller to the seller"@en ,
+                                     "relazione che lega l'abbigliamento venduto da un venditore al venditore"@it ;
+                        rdfs:label "sells by"@en ,
+                                   "venduto da"@it .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/talliente/abbigliamento#codiceIdentificativo
+abbigliamento:codiceIdentificativo rdf:type owl:DatatypeProperty ,
+                                            owl:FunctionalProperty ;
+                                   rdfs:domain abbigliamento:Abbigliamento ;
+                                   rdfs:comment "Unique code to identificate the item of clothing"@en ,
+                                                "codice univoco per identificare il capo di abbigliamento"@it ;
+                                   rdfs:label "code"@en ,
+                                              "codice"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#composizioneMaterialePrincipale
+abbigliamento:composizioneMaterialePrincipale rdf:type owl:DatatypeProperty ;
+                                              rdfs:domain abbigliamento:Abbigliamento ;
+                                              rdfs:range xsd:int ;
+                                              rdfs:comment "la composizione in percentuale del materiale principale usato nel tessuto di un abbigliamento"@it ,
+                                                           "the percentage composition of the material used in the fabric of a clothing"@en ;
+                                              rdfs:label "composizione materiale principale"@it ,
+                                                         "main material composition"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#costo
+abbigliamento:costo rdf:type owl:DatatypeProperty ;
+                    rdfs:domain abbigliamento:Tessuto ;
+                    rdfs:range xsd:integer ;
+                    rdfs:comment "cost per meter of a fabric in euro"@en ,
+                                 "costo di un tessuto al metro in euro"@it ;
+                    rdfs:label "cost"@en ,
+                               "costo"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#provenienza
+abbigliamento:provenienza rdf:type owl:DatatypeProperty ;
+                          rdfs:domain abbigliamento:Tessuto ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "country of origin of the fabric"@en ,
+                                       "paese di provenienza del tessuto"@it ;
+                          rdfs:label "origin"@en ,
+                                     "provenienza"@it .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.ebusiness-unibw.org/ontologies/cpi/ns#cpi:ClothingAndAccessories
+<http://www.ebusiness-unibw.org/ontologies/cpi/ns#cpi:ClothingAndAccessories> rdf:type owl:Class ;
+                                                                              owl:equivalentClass abbigliamento:Abbigliamento .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent
+<http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent> rdf:type owl:Class ;
+                                                                   owl:equivalentClass <http://xmlns.com/foaf/0.1/Agent> ;
+                                                                   rdfs:subClassOf objectrole:Object .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept
+<http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept> rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Object
+objectrole:Object rdf:type owl:Class .
+
+
+###  http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#Role
+objectrole:Role rdf:type owl:Class ;
+                rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept> .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#Abbigliamento
+abbigliamento:Abbigliamento rdf:type owl:Class ;
+                            rdfs:comment "Capo di abbigliamento con cui ci si veste"@it ,
+                                         "Item of clothing with which you dress"@en ;
+                            rdfs:label "Abbigliamento"@it ,
+                                       "Clothing"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#AbbigliamentoDiQualità
+abbigliamento:AbbigliamentoDiQualità rdf:type owl:Class ;
+                                     rdfs:subClassOf abbigliamento:Abbigliamento ;
+                                     rdfs:comment "Capo di abbigliamento ritenuto di qualità"@it ,
+                                                  "item of clothing condìsidered to be of quality"@en ;
+                                     rdfs:label "Abbigliamento di qualità"@it ,
+                                                "Quality clothing"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#AbbigliamentoIntelligente
+abbigliamento:AbbigliamentoIntelligente rdf:type owl:Class ;
+                                        owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                              owl:onProperty abbigliamento:fattoDi ;
+                                                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                              owl:onClass abbigliamento:TessutoElettronico
+                                                            ] ;
+                                        rdfs:subClassOf abbigliamento:Abbigliamento ;
+                                        rdfs:label "Abbigliamento intelligente"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#Materiale
+abbigliamento:Materiale rdf:type owl:Class ;
+                        owl:disjointWith abbigliamento:Tessuto ;
+                        rdfs:comment "Sostanza usata per produrre tessuti"@it ,
+                                     "Substance used to produce fabrics"@en ;
+                        rdfs:label "Material"@en ,
+                                   "Materiale"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#MaterialeChimico
+abbigliamento:MaterialeChimico rdf:type owl:Class ;
+                               rdfs:subClassOf abbigliamento:Materiale ;
+                               owl:disjointWith abbigliamento:MaterialeNaturale ;
+                               rdfs:comment "Material that doesn't exist in nature, invented by man through chemical processes"@en ,
+                                            "Materiale non esistente in natura, inventato dall'uomo tramite processi chimici"@it ;
+                               rdfs:label "Chemical material"@en ,
+                                          "Materiale chimico"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#MaterialeNaturale
+abbigliamento:MaterialeNaturale rdf:type owl:Class ;
+                                rdfs:subClassOf abbigliamento:Materiale ;
+                                rdfs:comment "Material of natural origin, that is, found in nature"@en ,
+                                             "Materiale di origine naturale, cioè che si trova in natura"@it ;
+                                rdfs:label "Materiale naturale"@it ,
+                                           "Natural material"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#MaterialeNaturaleAnimale
+abbigliamento:MaterialeNaturaleAnimale rdf:type owl:Class ;
+                                       rdfs:subClassOf abbigliamento:MaterialeNaturale ;
+                                       rdfs:comment "Material found in nature and of animal origin"@en ,
+                                                    "Materiale che si trova in natura e di origine animale"@it ;
+                                       rdfs:label "Animal natural material"@en ,
+                                                  "Materiale naturale animale"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#MaterialeNaturaleMinerale
+abbigliamento:MaterialeNaturaleMinerale rdf:type owl:Class ;
+                                        rdfs:subClassOf abbigliamento:MaterialeNaturale ;
+                                        rdfs:comment "Material found in nature and of mineral origin"@en ;
+                                        rdfs:label "Materiale naturale minerale"@it ,
+                                                   "Mineral natural material"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#MaterialeNaturaleVegetale
+abbigliamento:MaterialeNaturaleVegetale rdf:type owl:Class ;
+                                        rdfs:subClassOf abbigliamento:MaterialeNaturale ;
+                                        rdfs:comment "Material found in nature and of plant origin"@en ,
+                                                     "Materiale che si trova in natura e di origine vegetale"@it ;
+                                        rdfs:label "Materiale naturale vegetale"@it ,
+                                                   "Natural plant material"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#Stagione
+abbigliamento:Stagione rdf:type owl:Class ;
+                       owl:equivalentClass [ rdf:type owl:Class ;
+                                             owl:oneOf ( abbigliamento:autunno
+                                                         abbigliamento:estate
+                                                         abbigliamento:inverno
+                                                         abbigliamento:primavera
+                                                       )
+                                           ] ;
+                       rdfs:subClassOf <https://www.w3.org/TR/owl-time/#time:Interval> .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#Stilista
+abbigliamento:Stilista rdf:type owl:Class ;
+                       owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty objectrole:isRoleOf ;
+                                                                    owl:someValuesFrom <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent>
+                                                                  ]
+                                                                  [ rdf:type owl:Restriction ;
+                                                                    owl:onProperty abbigliamento:progetta ;
+                                                                    owl:someValuesFrom abbigliamento:Abbigliamento
+                                                                  ]
+                                                                ) ;
+                                             rdf:type owl:Class
+                                           ] ;
+                       rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept> ;
+                       owl:disjointWith abbigliamento:Venditore ;
+                       rdfs:comment "A Concept that classifies an Object as a stylist"@en ,
+                                    "Un concetto che classifica un oggetto come uno stilista"@it ;
+                       rdfs:label "Stilista"@it ,
+                                  "Stylist"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#Tessuto
+abbigliamento:Tessuto rdf:type owl:Class ;
+                      rdfs:comment "Tessuto tessile è un prodotto finito che si ottiene dall'intreccio di fibre tessili di uno o più materiali (cotone, seta ...)"@it ,
+                                   "Textile fabric is a finished product obtained from the intertwining of textile fibers of one or more materials (cotton, silk ...)"@en ;
+                      rdfs:label "Fabric"@en ,
+                                 "Tessuto"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#TessutoElettronico
+abbigliamento:TessutoElettronico rdf:type owl:Class ;
+                                 owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                       owl:onProperty abbigliamento:compostoDa ;
+                                                       owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                       owl:onClass abbigliamento:MaterialeNaturaleMinerale
+                                                     ] ;
+                                 rdfs:subClassOf abbigliamento:TessutoMisto ;
+                                 rdfs:comment "Fabric capable of capturing and analyzing a signal to respond appropriately"@en ,
+                                              "Tessuto in grado di catturare e analizzare un segnale di rispondere in modo adeguato"@it ;
+                                 rdfs:label "Eletronic fabric"@en ,
+                                            "Tessuto elettronico"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#TessutoMisto
+abbigliamento:TessutoMisto rdf:type owl:Class ;
+                           owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                 owl:onProperty abbigliamento:compostoDa ;
+                                                 owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                                                 owl:onClass abbigliamento:Materiale
+                                               ] ;
+                           rdfs:subClassOf abbigliamento:Tessuto ;
+                           owl:disjointWith abbigliamento:TessutoPuro ;
+                           rdfs:comment "Tessuto formato dall'intreccio di fibre di più materiali"@it ,
+                                        "fabric formed by the intertwining of fibers of several materials"@en ;
+                           rdfs:label "Mixed fabric"@en ,
+                                      "Tessuto misto"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#TessutoPuro
+abbigliamento:TessutoPuro rdf:type owl:Class ;
+                          owl:equivalentClass [ rdf:type owl:Restriction ;
+                                                owl:onProperty abbigliamento:compostoDa ;
+                                                owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                owl:onClass abbigliamento:Materiale
+                                              ] ;
+                          rdfs:subClassOf abbigliamento:Tessuto ;
+                          rdfs:comment "Fabric formed by the intertwining of fibers of a single material"@en ,
+                                       "Tessuto formato dall'intreccio di fibre di un unico materiale"@it ;
+                          rdfs:label "Pure fabric"@en ,
+                                     "Tessuto puro"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#Venditore
+abbigliamento:Venditore rdf:type owl:Class ;
+                        owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty objectrole:isRoleOf ;
+                                                                     owl:someValuesFrom <http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent>
+                                                                   ]
+                                                                   [ rdf:type owl:Restriction ;
+                                                                     owl:onProperty abbigliamento:vende ;
+                                                                     owl:someValuesFrom abbigliamento:Abbigliamento
+                                                                   ]
+                                                                 ) ;
+                                              rdf:type owl:Class
+                                            ] ;
+                        rdfs:subClassOf <http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept> ;
+                        rdfs:comment "A Concept that classifies an Object as a vendor"@en ,
+                                     "Un concetto che classifica un oggetto come un venditore"@it ;
+                        rdfs:label "Venditore"@it ,
+                                   "Vendor"@en .
+
+
+###  http://xmlns.com/foaf/0.1/Agent
+<http://xmlns.com/foaf/0.1/Agent> rdf:type owl:Class .
+
+
+###  https://www.w3.org/TR/owl-time/#time:Interval
+<https://www.w3.org/TR/owl-time/#time:Interval> rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/talliente/abbigliamento#acrilico
+abbigliamento:acrilico rdf:type owl:NamedIndividual ,
+                                abbigliamento:MaterialeChimico ;
+                       rdfs:comment "Acrilico è un termine generico, usato per indicare una famiglia di fibre sintetiche ottenute dalla polimerizzazione dell'acrilonitrile. In particolare, affinché si possa parlare di acrilico è necessario che almeno l'85% in peso dei monomeri presenti nella catena polimerica sia costituito da acrilonitrile"@it ,
+                                    "Acrylic is a generic term used to indicate a family of synthetic fibers obtained from the polymerization of acrylonitrile. In particular, in order to be able to speak of acrylic it is necessary that at least 85% by weight of the monomers present in the polymer chain is made up of acrylonitrile"@en ;
+                       rdfs:label "acrilico"@it ,
+                                  "acrylic"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#armaniStore
+abbigliamento:armaniStore rdf:type owl:NamedIndividual ,
+                                   <http://xmlns.com/foaf/0.1/Agent> ;
+                          objectrole:hasRole abbigliamento:venditoreArmani ;
+                          rdfs:comment "negozio che vende abbigliamento del brand di armani"@it ,
+                                       "shop that sells clothing from the armani brand"@en ;
+                          rdfs:label "armani store"@en ,
+                                     "armani store"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#autunno
+abbigliamento:autunno rdf:type owl:NamedIndividual ;
+                      rdfs:comment "La terza stagione dell'anno compresa, nell'emisfero boreale, tra il 23 settembre e il 22 dicembre e in quello australe tra il 21 marzo e il 21 giugno."@it ,
+                                   "The third season of the year included, in the northern hemisphere, between 23 September and 22 December and in the southern hemisphere between 21 March and 21 June."@en ;
+                      rdfs:label "autumn"@en ,
+                                 "autunno"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#calzini02A9
+abbigliamento:calzini02A9 rdf:type owl:NamedIndividual ,
+                                   abbigliamento:Abbigliamento ;
+                          abbigliamento:fattoDi abbigliamento:tessutoRameCotone ;
+                          abbigliamento:codiceIdentificativo "02A9" ;
+                          rdfs:comment "garment to cover the foot, short to the ankle or below the knee with identification code 02A9"@en ,
+                                       "indumento per coprire il piede, corto fino alla caviglia o fin sotto il ginocchio il cui codice identificativo è 02A9"@it ;
+                          rdfs:label "calzini 02A9"@it ,
+                                     "socks 02A9"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#cappottoC3A56
+abbigliamento:cappottoC3A56 rdf:type owl:NamedIndividual ,
+                                     abbigliamento:Abbigliamento ;
+                            abbigliamento:abbinatoCon abbigliamento:pantalone08B3 ;
+                            abbigliamento:creatoDa abbigliamento:giorgioArmani ;
+                            abbigliamento:fattoDi abbigliamento:tessutoLanaPura ;
+                            abbigliamento:haMaterialePrincipale abbigliamento:lana ;
+                            abbigliamento:indossatoIn abbigliamento:inverno ;
+                            abbigliamento:codiceIdentificativo "C3A56" ;
+                            abbigliamento:composizioneMaterialePrincipale 100 ;
+                            rdfs:comment "heavy winter garment to be worn over clothes with identification code C3A56"@en ,
+                                         "indumento invernale, pesante, da portare sopra i vestiti con codice identificativo C3A56"@it ;
+                            rdfs:label "cappotto C3A56"@it ,
+                                       "coat C3A56"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#cotone
+abbigliamento:cotone rdf:type owl:NamedIndividual ,
+                              abbigliamento:MaterialeNaturaleVegetale ;
+                     abbigliamento:compone abbigliamento:tessutoCotonePuro ;
+                     rdfs:comment "Herbaceous or shrubby plant, the seeds of which are covered with a white down used as a textile fiber"@en ,
+                                  "Pianta erbacea o arbustiva, i cui semi sono rivestiti da una peluria bianca usata come fibra tessile"@it ;
+                     rdfs:label "cotone"@it ,
+                                "cotton"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#estate
+abbigliamento:estate rdf:type owl:NamedIndividual ;
+                     rdfs:comment "La seconda stagione dell'anno, compresa, nell'emisfero boreale, tra il 21 giugno e il 23 settembre e, in quello australe, tra il 21 dicembre e il 21 marzo; è la stagione in cui si ha la temperatura più elevata dell'anno"@it ,
+                                  "The second season of the year, including, in the northern hemisphere, between 21 June and 23 September and, in the southern hemisphere, between 21 December and 21 March; it is the season in which there is the highest temperature of the year"@en ;
+                     rdfs:label "estate"@it ,
+                                "summer"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#giacca1T56
+abbigliamento:giacca1T56 rdf:type owl:NamedIndividual ,
+                                  abbigliamento:Abbigliamento ;
+                         abbigliamento:codiceIdentificativo "1T56" ;
+                         rdfs:comment "Garment for men or women, generally made of fabric, but also of leather, knitted wool, and the like, which covers the upper part of the body down to the waist, waterproof, or of polyester fabric, often with hood, with closure zip, for sports use with identification code 1T56"@en ,
+                                      "Indumento per uomo o per donna, generalmente di stoffa, ma anche di pelle, di lana a maglia, e sim., che ricopre la parte superiore del corpo fin sotto la vita, impermeabile, o di tessuto poliestere, spesso con cappuccio, a chiusura lampo, per uso sportivo con codice identificativo 1T56"@it ;
+                         rdfs:label "giacca 1T56"@it ,
+                                    "jacket 1T56"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#giorgioArmani
+abbigliamento:giorgioArmani rdf:type owl:NamedIndividual ,
+                                     objectrole:Object ;
+                            objectrole:hasRole abbigliamento:stilistaArmani ;
+                            rdfs:comment "is an Italian stylist and entrepreneur who founded the company of the same name, one of the most important brands in the world in the fashion field."@en ,
+                                         "è uno stilista e imprenditore italiano fondatore dell'azienda omonima, uno dei marchi più importanti al mondo nel campo della moda."@it ;
+                            rdfs:label "giorgio armani"@en ,
+                                       "giorgio armani"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#inverno
+abbigliamento:inverno rdf:type owl:NamedIndividual ;
+                      rdfs:comment "La quarta stagione dell'anno (la più fredda e la meno illuminata), compresa, nell'emisfero boreale, tra il 22 dicembre e il 21 marzo, e in quello australe tra il 21 giugno e il 23 settembre."@it ,
+                                   "The fourth season of the year (the coldest and the least illuminated), including, in the northern hemisphere, between 22 December and 21 March, and in the southern hemisphere between 21 June and 23 September."@en ;
+                      rdfs:label "inverno"@it ,
+                                 "winter"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#lana
+abbigliamento:lana rdf:type owl:NamedIndividual ,
+                            abbigliamento:MaterialeNaturaleAnimale ;
+                   rdfs:comment "fibra tessile ricavata dal pelo della pecora e di altri animali"@it ,
+                                "textile fiber obtained from the hair of sheep and other animals"@en ;
+                   rdfs:label "lana"@it ,
+                              "wool"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#leggins1B98
+abbigliamento:leggins1B98 rdf:type owl:NamedIndividual ;
+                          abbigliamento:fattoDi abbigliamento:mistoCotoneSintetico ;
+                          abbigliamento:haMaterialePrincipale abbigliamento:acrilico ;
+                          abbigliamento:codiceIdentificativo "1B98" ;
+                          abbigliamento:composizioneMaterialePrincipale 60 ;
+                          rdfs:comment "close-fitting trousers, usually made out of a stretchy fabric with identification code 1B98"@en ,
+                                       "pantaloni attillati, solitamente realizzati con un tessuto elastico con codice identificativo 1B98"@it ;
+                          rdfs:label "leggins 1B98"@en ,
+                                     "leggins1B98"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#maglia05A2
+abbigliamento:maglia05A2 rdf:type owl:NamedIndividual ,
+                                  abbigliamento:Abbigliamento ;
+                         abbigliamento:fattoDi abbigliamento:tessutoCotonePuro ;
+                         abbigliamento:haMaterialePrincipale abbigliamento:cotone ;
+                         abbigliamento:indossatoIn abbigliamento:primavera ;
+                         abbigliamento:codiceIdentificativo "05A2" ;
+                         abbigliamento:composizioneMaterialePrincipale 100 ;
+                         rdfs:comment "La maglietta, t-shirt o semplicemente tee è un capo di abbigliamento di stoffa, senza bottoni e senza colletto, che ricopre il torso di chi la indossa. Può essere confezionata a maniche lunghe o a maniche corte con codice identificativo 05A2"@it ,
+                                      "The shirt, t-shirt or simply tee is a piece of clothing made of fabric, without buttons and without a collar, which covers the torso of the wearer. It can be made with long or short sleeves with identification code 05A2"@en ;
+                         rdfs:label "maglia05A2"@it ,
+                                    "shirt05A2"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#maglia12G6
+abbigliamento:maglia12G6 rdf:type owl:NamedIndividual ;
+                         abbigliamento:fattoDi abbigliamento:mistoLanaCotone ;
+                         abbigliamento:indossatoIn abbigliamento:autunno ,
+                                                   abbigliamento:inverno ;
+                         abbigliamento:codiceIdentificativo "12G6" ;
+                         rdfs:comment "La maglietta, t-shirt o semplicemente tee è un capo di abbigliamento di stoffa, senza bottoni e senza colletto, che ricopre il torso di chi la indossa. Può essere confezionata a maniche lunghe o a maniche corte con codice identificativo 12G6"@it ,
+                                      "The shirt, t-shirt or simply tee is a piece of clothing made of fabric, without buttons and without a collar, which covers the torso of the wearer. It can be made with long or short sleeves with identification code 12G6"@en ;
+                         rdfs:label "maglia12G6"@it ,
+                                    "shirt12G6"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#magliaTermo9999
+abbigliamento:magliaTermo9999 rdf:type owl:NamedIndividual ;
+                              rdfs:comment "jersey able to balance heat, with identification code 9999"@en ,
+                                           "maglia in grado di equilibrare il calore, con codice identificativo 9999"@it ;
+                              rdfs:label "maglia termo 9999"@it ,
+                                         "thermo shirt 9999"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#mistoCotoneSintetico
+abbigliamento:mistoCotoneSintetico rdf:type owl:NamedIndividual ,
+                                            abbigliamento:Tessuto ;
+                                   abbigliamento:compostoDa abbigliamento:acrilico ,
+                                                            abbigliamento:cotone ;
+                                   rdfs:comment "mixed fabric formed by the intertwining of cotton and synthetic fibers"@en ,
+                                                "tessuto misto formato dall'intreccio di fibre di cotone e di sintetico"@it ;
+                                   rdfs:label "misto cotone sintetico"@it ,
+                                              "synthetic cotton blend"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#mistoLanaCotone
+abbigliamento:mistoLanaCotone rdf:type owl:NamedIndividual ,
+                                       abbigliamento:Tessuto ;
+                              abbigliamento:compostoDa abbigliamento:cotone ,
+                                                       abbigliamento:lana ;
+                              rdfs:comment "fabric formed by the intertwining of wool and cotton fibers"@en ,
+                                           "tessuto formato dall'intreccio di fibre di lana e cotone"@it ;
+                              rdfs:label "cotton wool blend"@en ,
+                                         "misto lana cotone"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#pantalone08B3
+abbigliamento:pantalone08B3 rdf:type owl:NamedIndividual ,
+                                     abbigliamento:Abbigliamento ;
+                            abbigliamento:fattoDi abbigliamento:mistoCotoneSintetico ;
+                            abbigliamento:haMaterialePrincipale abbigliamento:cotone ;
+                            abbigliamento:indossatoIn abbigliamento:primavera ;
+                            abbigliamento:codiceIdentificativo "08B3" ;
+                            abbigliamento:composizioneMaterialePrincipale 90 ;
+                            rdfs:comment "Garment that covers the body below the waist, extending separately on the two legs, up to the instep with the identification code 08B3"@en ,
+                                         "Indumento che riveste il corpo inferiormente alla cintola, prolungandosi separatamente sulle due gambe, fino al collo del piede con codice identificativo 08B3"@it ;
+                            rdfs:label "pantalone 08B3"@it ,
+                                       "pants 08B3"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#pantaloneM876
+abbigliamento:pantaloneM876 rdf:type owl:NamedIndividual ;
+                            abbigliamento:fattoDi abbigliamento:mistoCotoneSintetico ;
+                            abbigliamento:haMaterialePrincipale abbigliamento:cotone ;
+                            abbigliamento:codiceIdentificativo "M876" ;
+                            abbigliamento:composizioneMaterialePrincipale 60 ;
+                            rdfs:comment "Garment that covers the body below the waist, extending separately on the two legs, up to the instep with the identification code M876"@en ,
+                                         "Indumento che riveste il corpo inferiormente alla cintola, prolungandosi separatamente sulle due gambe, fino al collo del piede con codice identificativo M876"@it ;
+                            rdfs:label "pantalone 08B3"@it ,
+                                       "pants 08B3"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#primavera
+abbigliamento:primavera rdf:type owl:NamedIndividual ;
+                        rdfs:comment "La prima stagione dell'anno nell'emisfero boreale, compresa tra il 21 marzo e il 21 giugno; in quello australe è compresa tra il 23 settembre e il 21 dicembre."@it ,
+                                     "The first season of the year in the northern hemisphere, between March 21 and June 21; in the austral one it is between 23 September and 21 December."@en ;
+                        rdfs:label "primavera"@it ,
+                                   "spring"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#rame
+abbigliamento:rame rdf:type owl:NamedIndividual ,
+                            abbigliamento:MaterialeNaturaleMinerale ;
+                   rdfs:comment "Chemical element, metal of light red color, quite hard, very ductile, present in nature both free and in the form of minerals (chalcopyrite, azurite, cuprite, malachite) and also contained in traces in soil, plants and animals, excellent conductor of electricity and heat; it is one of the most widely used metals for containers, machine parts, electrical conduits, coins, and for obtaining alloys such as bronzes and brass."@en ,
+                                "Elemento chimico, metallo di colore rosso-chiaro, abbastanza duro, molto duttile, presente in natura sia libero, sia sotto forma di minerali (calcopirite, azzurrite, cuprite, malachite) e contenuto in tracce anche nel terreno, nelle piante e negli animali, ottimo conduttore dell'elettricità e del calore; è uno dei metalli più largamente usati per recipienti, parti di macchine, condutture elettriche, monete, e per l'ottenimento di leghe come i bronzi e gli ottoni."@it ;
+                   rdfs:label "copper"@en ,
+                              "rame"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#scarpa19F3
+abbigliamento:scarpa19F3 rdf:type owl:NamedIndividual ;
+                         abbigliamento:codiceIdentificativo "19F3" ;
+                         rdfs:comment "Calzatura che riveste e protegge il piede con codice identificativo 19F3"@it ,
+                                      "Footwear that covers and protects the foot with identification code 19F3"@en ;
+                         rdfs:label "scarpa 19F3"@it ,
+                                    "shoe 19F3"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#seta
+abbigliamento:seta rdf:type owl:NamedIndividual ,
+                            abbigliamento:MaterialeNaturaleAnimale ;
+                   rdfs:comment "fiber obtained from the cocoon of the silkworm"@en ,
+                                "fibra che si ricava dal bozzolo del baco da seta"@in ;
+                   rdfs:label "seta"@it ,
+                              "silk"@en .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#stilistaArmani
+abbigliamento:stilistaArmani rdf:type owl:NamedIndividual ,
+                                      objectrole:Role ;
+                             abbigliamento:progetta abbigliamento:cappottoC3A56 ,
+                                                    abbigliamento:scarpa19F3 ;
+                             rdfs:comment "role of stylist for the armani brand"@en ,
+                                          "ruolo di stilista per il brand di armani"@it ;
+                             rdfs:label "armani stylist"@en ,
+                                        "stilista armani"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#tessutoCotonePuro
+abbigliamento:tessutoCotonePuro rdf:type owl:NamedIndividual ,
+                                         abbigliamento:TessutoPuro ;
+                                abbigliamento:costo 150 ;
+                                rdfs:comment "fabric formed by the intertwining of cotton fibers only"@en ,
+                                             "tessuto formato dall'intreccio di fibre di solo cotone"@it ;
+                                rdfs:label "pure cotton fabric"@en ,
+                                           "tessuto cotone puro"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#tessutoLanaPura
+abbigliamento:tessutoLanaPura rdf:type owl:NamedIndividual ,
+                                       abbigliamento:TessutoPuro ;
+                              abbigliamento:compostoDa abbigliamento:lana ;
+                              abbigliamento:idealePer abbigliamento:inverno ;
+                              abbigliamento:costo 50 ;
+                              abbigliamento:provenienza "Italia" ;
+                              rdfs:comment "fabric formed by the intertwining of only wool fibers"@en ,
+                                           "tessuto formato dall'intreccio di fibre di solo lana"@it ;
+                              rdfs:label "pure wool fabric"@en ,
+                                         "tessuto lana pura"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#tessutoPelliccia
+abbigliamento:tessutoPelliccia rdf:type owl:NamedIndividual ,
+                                        abbigliamento:TessutoPuro ;
+                               abbigliamento:associato abbigliamento:inverno ;
+                               abbigliamento:tessutoDi abbigliamento:giacca1T56 ;
+                               rdfs:comment "il mantello pilifero di molte specie di Mammiferi, ma spec. il prodotto ricavato dalla pelle degli animali morti, trattata in modo da conservare il pelo con le sue caratteristiche di morbidezza e lucentezza"@it ,
+                                            "the hair mantle of many mammal species, but spec. the product obtained from the skin of dead animals, treated in such a way as to preserve the hair with its characteristics of softness and shine"@en ;
+                               rdfs:label "fur fabric"@en ,
+                                          "tessuto pelliccia"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#tessutoRameCotone
+abbigliamento:tessutoRameCotone rdf:type owl:NamedIndividual ,
+                                         abbigliamento:Tessuto ;
+                                abbigliamento:compostoDa abbigliamento:cotone ,
+                                                         abbigliamento:rame ;
+                                rdfs:comment "fabric formed by the intertwining of cotton and copper fibers"@en ,
+                                             "tessuto formato dall'intreccio di fibre di cotone e rame"@it ;
+                                rdfs:label "copper cotton fabric"@en ,
+                                           "tessuto rame cotone"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#tessutoRameLana
+abbigliamento:tessutoRameLana rdf:type owl:NamedIndividual ,
+                                       abbigliamento:TessutoElettronico ;
+                              abbigliamento:tessutoDi abbigliamento:magliaTermo9999 ;
+                              rdfs:comment "fabric formed by the intertwining of wool and copper fibers"@en ,
+                                           "tessuto formato dall'intreccio di fibre di lana e rame"@it ;
+                              rdfs:label "copper wool fabric"@en ,
+                                         "tessuto rame lana"@it .
+
+
+###  http://www.semanticweb.org/talliente/abbigliamento#venditoreArmani
+abbigliamento:venditoreArmani rdf:type owl:NamedIndividual ,
+                                       abbigliamento:Venditore ;
+                              abbigliamento:vende abbigliamento:maglia05A2 ,
+                                                  abbigliamento:maglia12G6 ;
+                              rdfs:comment "role played by an agent in selling one or more clothing items of the armani brand"@en ,
+                                           "ruolo che ha un agente nel vendere uno o più capi di abbigliamento del brand armani"@it ;
+                              rdfs:label "armani seller"@en ,
+                                         "venditore armani"@it .
+
+
+#################################################################
+#    General axioms
+#################################################################
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( <http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept>
+                objectrole:Object
+                abbigliamento:Abbigliamento
+                abbigliamento:Materiale
+                abbigliamento:Tessuto
+              )
+] .
+
+
+[ rdf:type owl:AllDisjointClasses ;
+  owl:members ( abbigliamento:MaterialeNaturaleAnimale
+                abbigliamento:MaterialeNaturaleMinerale
+                abbigliamento:MaterialeNaturaleVegetale
+              )
+] .
+
+
+[ rdf:type owl:AllDifferent ;
+  owl:distinctMembers ( abbigliamento:acrilico
+                        abbigliamento:armaniStore
+                        abbigliamento:autunno
+                        abbigliamento:calzini02A9
+                        abbigliamento:cappottoC3A56
+                        abbigliamento:cotone
+                        abbigliamento:estate
+                        abbigliamento:giacca1T56
+                        abbigliamento:giorgioArmani
+                        abbigliamento:inverno
+                        abbigliamento:lana
+                        abbigliamento:leggins1B98
+                        abbigliamento:maglia05A2
+                        abbigliamento:maglia12G6
+                        abbigliamento:magliaTermo9999
+                        abbigliamento:mistoCotoneSintetico
+                        abbigliamento:mistoLanaCotone
+                        abbigliamento:pantalone08B3
+                        abbigliamento:pantaloneM876
+                        abbigliamento:primavera
+                        abbigliamento:rame
+                        abbigliamento:scarpa19F3
+                        abbigliamento:seta
+                        abbigliamento:stilistaArmani
+                        abbigliamento:tessutoCotonePuro
+                        abbigliamento:tessutoLanaPura
+                        abbigliamento:tessutoPelliccia
+                        abbigliamento:tessutoRameCotone
+                        abbigliamento:tessutoRameLana
+                        abbigliamento:venditoreArmani
+                      )
+] .
+
+
+#################################################################
+#    Rules
+#################################################################
+
+<http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t> rdf:type swrl:Variable .
+
+<http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a> rdf:type swrl:Variable .
+
+<http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m> rdf:type swrl:Variable .
+
+<http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#c> rdf:type swrl:Variable .
+
+abbigliamento:a rdf:type swrl:Variable .
+
+abbigliamento:t rdf:type swrl:Variable .
+
+abbigliamento:s rdf:type swrl:Variable .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Asserisce che il tessuto puro è il tessuto di un abbigliamento di qualità"^^xsd:string ;
+   rdfs:label "S3"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate abbigliamento:TessutoPuro ;
+                           swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate abbigliamento:tessutoDi ;
+                                      swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t> ;
+                                      swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a>
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate abbigliamento:AbbigliamentoDiQualità ;
+                           swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Asserisce che se un abbigliamento è fatto di un tessuto usato per una stagione allora l'abbigliamento va indossato in quella stagione"^^xsd:string ;
+   rdfs:label "S5"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate abbigliamento:fattoDi ;
+                           swrl:argument1 abbigliamento:a ;
+                           swrl:argument2 abbigliamento:t
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate abbigliamento:associato ;
+                                      swrl:argument1 abbigliamento:t ;
+                                      swrl:argument2 abbigliamento:s
+                                    ] ;
+                          rdf:rest rdf:nil
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate abbigliamento:indossatoIn ;
+                           swrl:argument1 abbigliamento:a ;
+                           swrl:argument2 abbigliamento:s
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Asserisce che se un abbigliamento è fatto di un tessuto puro composto da materiale naturale animale allora l'abbigliamento va indossato in inverno"^^xsd:string ;
+   rdfs:label "S1"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate abbigliamento:TessutoPuro ;
+                           swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate abbigliamento:fattoDi ;
+                                      swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a> ;
+                                      swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:ClassAtom ;
+                                                 swrl:classPredicate abbigliamento:MaterialeNaturaleAnimale ;
+                                                 swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate abbigliamento:compostoDa ;
+                                                            swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t> ;
+                                                            swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m>
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate abbigliamento:indossatoIn ;
+                           swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a> ;
+                           swrl:argument2 abbigliamento:inverno
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Asserisce che se un abbigliamento è fatto di un tessuto puro composto da materiale naturale vegetale allora l'abbigliamento va indossato in estate"^^xsd:string ;
+   rdfs:label "S2"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate abbigliamento:TessutoPuro ;
+                           swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:ClassAtom ;
+                                      swrl:classPredicate abbigliamento:MaterialeNaturaleVegetale ;
+                                      swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                 swrl:propertyPredicate abbigliamento:fattoDi ;
+                                                 swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a> ;
+                                                 swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t>
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate abbigliamento:compostoDa ;
+                                                            swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t> ;
+                                                            swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m>
+                                                          ] ;
+                                                rdf:rest rdf:nil
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                           swrl:propertyPredicate abbigliamento:indossatoIn ;
+                           swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a> ;
+                           swrl:argument2 abbigliamento:estate
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+[ swrla:isRuleEnabled "true"^^xsd:boolean ;
+   rdfs:comment "Asserisce che un abbigliamento fatto di un tessuto misto è comunque di qualità se il materiale principale è un materiale naturale e la composizione è maggiore dell' 80%"^^xsd:string ;
+   rdfs:label "S4"^^xsd:string ;
+   rdf:type swrl:Imp ;
+   swrl:body [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate abbigliamento:TessutoMisto ;
+                           swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t>
+                         ] ;
+               rdf:rest [ rdf:type swrl:AtomList ;
+                          rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                      swrl:propertyPredicate abbigliamento:haMaterialePrincipale ;
+                                      swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a> ;
+                                      swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m>
+                                    ] ;
+                          rdf:rest [ rdf:type swrl:AtomList ;
+                                     rdf:first [ rdf:type swrl:BuiltinAtom ;
+                                                 swrl:builtin swrlb:greaterThan ;
+                                                 swrl:arguments [ rdf:type rdf:List ;
+                                                                  rdf:first <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#c> ;
+                                                                  rdf:rest [ rdf:type rdf:List ;
+                                                                             rdf:first 80 ;
+                                                                             rdf:rest rdf:nil
+                                                                           ]
+                                                                ]
+                                               ] ;
+                                     rdf:rest [ rdf:type swrl:AtomList ;
+                                                rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                            swrl:propertyPredicate abbigliamento:tessutoDi ;
+                                                            swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t> ;
+                                                            swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a>
+                                                          ] ;
+                                                rdf:rest [ rdf:type swrl:AtomList ;
+                                                           rdf:first [ rdf:type swrl:DatavaluedPropertyAtom ;
+                                                                       swrl:propertyPredicate abbigliamento:composizioneMaterialePrincipale ;
+                                                                       swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a> ;
+                                                                       swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#c>
+                                                                     ] ;
+                                                           rdf:rest [ rdf:type swrl:AtomList ;
+                                                                      rdf:first [ rdf:type swrl:IndividualPropertyAtom ;
+                                                                                  swrl:propertyPredicate abbigliamento:compone ;
+                                                                                  swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m> ;
+                                                                                  swrl:argument2 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t>
+                                                                                ] ;
+                                                                      rdf:rest rdf:nil
+                                                                    ]
+                                                         ]
+                                              ]
+                                   ]
+                        ]
+             ] ;
+   swrl:head [ rdf:type swrl:AtomList ;
+               rdf:first [ rdf:type swrl:ClassAtom ;
+                           swrl:classPredicate abbigliamento:AbbigliamentoDiQualità ;
+                           swrl:argument1 <http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a>
+                         ] ;
+               rdf:rest rdf:nil
+             ]
+ ] .
+
+###  Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi
