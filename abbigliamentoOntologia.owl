@@ -1,0 +1,2498 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/talliente/abbigliamento"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/talliente/abbigliamento">
+    <Prefix name="" IRI="http://www.semanticweb.org/talliente/abbigliamento#"/>
+    <Prefix name="dc" IRI="http://purl.org/dc/elements/1.1/"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Prefix name="swrl" IRI="http://www.w3.org/2003/11/swrl#"/>
+    <Prefix name="vann" IRI="http://purl.org/vocab/vann/"/>
+    <Prefix name="swrla" IRI="http://swrl.stanford.edu/ontologies/3.3/swrla.owl#"/>
+    <Prefix name="swrlb" IRI="http://www.w3.org/2003/11/swrlb#"/>
+    <Prefix name="objectrole" IRI="http://www.ontologydesignpatterns.org/cp/owl/objectrole.owl#"/>
+    <Prefix name="abbigliamento" IRI="http://www.semanticweb.org/talliente/abbigliamento#"/>
+    <Prefix name="cpannotationschema" IRI="http://www.ontologydesignpatterns.org/schemas/cpannotationschema.owl#"/>
+    <Import>http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl</Import>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+        <Literal xml:lang="it">Martina Talliente</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+        <Literal xml:lang="it">2022-05-11</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+        <Literal xml:lang="it">Ontologia dedicata all&apos;abbigliamento, tessuti, materiali che lo compongono, alle persone che contribuiscono alla sua produzione e vendita, alle stagioni a cui è associato.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+        <Literal xml:lang="it">Abbigliamento 2022</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal xml:lang="it">a22</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+        <Literal xml:lang="it">http://www.semanticweb.org/talliente/abbigliamento#</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <Literal xml:lang="it">Abbigliamento</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="http://www.ebusiness-unibw.org/ontologies/cpi/ns#cpi:ClothingAndAccessories"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="objectrole:Object"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="objectrole:Role"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Abbigliamento"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbbigliamentoDiQualità"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AbbigliamentoIntelligente"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Materiale"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialeChimico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialeNaturale"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialeNaturaleAnimale"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialeNaturaleMinerale"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaterialeNaturaleVegetale"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stagione"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stilista"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Tessuto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TessutoElettronico"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TessutoMisto"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TessutoPuro"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Venditore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="https://www.w3.org/TR/owl-time/#time:Interval"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="objectrole:isRoleOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#abbinatoCon"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#associato"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#compone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#compostoDa"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#creatoDa"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#fattoDi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#haAbbigliamento"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#idealePer"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#indossatoIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#progetta"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#progettatoDa"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tessutoDi"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#vende"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#vendutoDa"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#codiceIdentificativo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#composizioneMaterialePrincipale"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#costo"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#provenienza"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#acrilico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#armaniStore"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#autunno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#calzini02A9"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#cotone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#estate"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#giacca1T56"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#giorgioArmani"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#inverno"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#lana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#leggins1B98"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#maglia05A2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#maglia12G6"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#magliaTermo9999"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mistoCotoneSintetico"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#mistoLanaCotone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pantalone08B3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#pantaloneM876"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#primavera"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#rame"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#scarpa19F3"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#seta"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#stilistaArmani"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tessutoCotonePuro"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tessutoLanaPura"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tessutoPelliccia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tessutoRameCotone"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#tessutoRameLana"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#venditoreArmani"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:creator"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:date"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:description"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="dc:title"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespacePrefix"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="vann:preferredNamespaceUri"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+    </Declaration>
+    <Declaration>
+        <AnnotationProperty abbreviatedIRI="objectrole:hasRole"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="http://www.ebusiness-unibw.org/ontologies/cpi/ns#cpi:ClothingAndAccessories"/>
+        <Class IRI="#Abbigliamento"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent"/>
+        <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#AbbigliamentoIntelligente"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#fattoDi"/>
+            <Class IRI="#TessutoElettronico"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stagione"/>
+        <ObjectOneOf>
+            <NamedIndividual IRI="#autunno"/>
+            <NamedIndividual IRI="#estate"/>
+            <NamedIndividual IRI="#inverno"/>
+            <NamedIndividual IRI="#primavera"/>
+        </ObjectOneOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Stilista"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="objectrole:isRoleOf"/>
+                <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#progetta"/>
+                <Class IRI="#Abbigliamento"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TessutoElettronico"/>
+        <ObjectMinCardinality cardinality="1">
+            <ObjectProperty IRI="#compostoDa"/>
+            <Class IRI="#MaterialeNaturaleMinerale"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TessutoMisto"/>
+        <ObjectMinCardinality cardinality="2">
+            <ObjectProperty IRI="#compostoDa"/>
+            <Class IRI="#Materiale"/>
+        </ObjectMinCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#TessutoPuro"/>
+        <ObjectExactCardinality cardinality="1">
+            <ObjectProperty IRI="#compostoDa"/>
+            <Class IRI="#Materiale"/>
+        </ObjectExactCardinality>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#Venditore"/>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty abbreviatedIRI="objectrole:isRoleOf"/>
+                <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="#vende"/>
+                <Class IRI="#Abbigliamento"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent"/>
+        <Class abbreviatedIRI="objectrole:Object"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="objectrole:Role"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbbigliamentoDiQualità"/>
+        <Class IRI="#Abbigliamento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AbbigliamentoIntelligente"/>
+        <Class IRI="#Abbigliamento"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialeChimico"/>
+        <Class IRI="#Materiale"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialeNaturale"/>
+        <Class IRI="#Materiale"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialeNaturaleAnimale"/>
+        <Class IRI="#MaterialeNaturale"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialeNaturaleMinerale"/>
+        <Class IRI="#MaterialeNaturale"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaterialeNaturaleVegetale"/>
+        <Class IRI="#MaterialeNaturale"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stagione"/>
+        <Class IRI="https://www.w3.org/TR/owl-time/#time:Interval"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stilista"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TessutoElettronico"/>
+        <Class IRI="#TessutoMisto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TessutoMisto"/>
+        <Class IRI="#Tessuto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TessutoPuro"/>
+        <Class IRI="#Tessuto"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Venditore"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/classification.owl#Concept"/>
+        <Class abbreviatedIRI="objectrole:Object"/>
+        <Class IRI="#Abbigliamento"/>
+        <Class IRI="#Materiale"/>
+        <Class IRI="#Tessuto"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Materiale"/>
+        <Class IRI="#Tessuto"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MaterialeChimico"/>
+        <Class IRI="#MaterialeNaturale"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#MaterialeNaturaleAnimale"/>
+        <Class IRI="#MaterialeNaturaleMinerale"/>
+        <Class IRI="#MaterialeNaturaleVegetale"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#Stilista"/>
+        <Class IRI="#Venditore"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#TessutoMisto"/>
+        <Class IRI="#TessutoPuro"/>
+    </DisjointClasses>
+    <ClassAssertion>
+        <Class IRI="#MaterialeChimico"/>
+        <NamedIndividual IRI="#acrilico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://xmlns.com/foaf/0.1/Agent"/>
+        <NamedIndividual IRI="#armaniStore"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Abbigliamento"/>
+        <NamedIndividual IRI="#calzini02A9"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Abbigliamento"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MaterialeNaturaleVegetale"/>
+        <NamedIndividual IRI="#cotone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Abbigliamento"/>
+        <NamedIndividual IRI="#giacca1T56"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="objectrole:Object"/>
+        <NamedIndividual IRI="#giorgioArmani"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MaterialeNaturaleAnimale"/>
+        <NamedIndividual IRI="#lana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Abbigliamento"/>
+        <NamedIndividual IRI="#maglia05A2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tessuto"/>
+        <NamedIndividual IRI="#mistoCotoneSintetico"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tessuto"/>
+        <NamedIndividual IRI="#mistoLanaCotone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Abbigliamento"/>
+        <NamedIndividual IRI="#pantalone08B3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MaterialeNaturaleMinerale"/>
+        <NamedIndividual IRI="#rame"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#MaterialeNaturaleAnimale"/>
+        <NamedIndividual IRI="#seta"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="objectrole:Role"/>
+        <NamedIndividual IRI="#stilistaArmani"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TessutoPuro"/>
+        <NamedIndividual IRI="#tessutoCotonePuro"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TessutoPuro"/>
+        <NamedIndividual IRI="#tessutoLanaPura"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TessutoPuro"/>
+        <NamedIndividual IRI="#tessutoPelliccia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Tessuto"/>
+        <NamedIndividual IRI="#tessutoRameCotone"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#TessutoElettronico"/>
+        <NamedIndividual IRI="#tessutoRameLana"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="#Venditore"/>
+        <NamedIndividual IRI="#venditoreArmani"/>
+    </ClassAssertion>
+    <DifferentIndividuals>
+        <NamedIndividual IRI="#acrilico"/>
+        <NamedIndividual IRI="#armaniStore"/>
+        <NamedIndividual IRI="#autunno"/>
+        <NamedIndividual IRI="#calzini02A9"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+        <NamedIndividual IRI="#cotone"/>
+        <NamedIndividual IRI="#estate"/>
+        <NamedIndividual IRI="#giacca1T56"/>
+        <NamedIndividual IRI="#giorgioArmani"/>
+        <NamedIndividual IRI="#inverno"/>
+        <NamedIndividual IRI="#lana"/>
+        <NamedIndividual IRI="#leggins1B98"/>
+        <NamedIndividual IRI="#maglia05A2"/>
+        <NamedIndividual IRI="#maglia12G6"/>
+        <NamedIndividual IRI="#magliaTermo9999"/>
+        <NamedIndividual IRI="#mistoCotoneSintetico"/>
+        <NamedIndividual IRI="#mistoLanaCotone"/>
+        <NamedIndividual IRI="#pantalone08B3"/>
+        <NamedIndividual IRI="#pantaloneM876"/>
+        <NamedIndividual IRI="#primavera"/>
+        <NamedIndividual IRI="#rame"/>
+        <NamedIndividual IRI="#scarpa19F3"/>
+        <NamedIndividual IRI="#seta"/>
+        <NamedIndividual IRI="#stilistaArmani"/>
+        <NamedIndividual IRI="#tessutoCotonePuro"/>
+        <NamedIndividual IRI="#tessutoLanaPura"/>
+        <NamedIndividual IRI="#tessutoPelliccia"/>
+        <NamedIndividual IRI="#tessutoRameCotone"/>
+        <NamedIndividual IRI="#tessutoRameLana"/>
+        <NamedIndividual IRI="#venditoreArmani"/>
+    </DifferentIndividuals>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#fattoDi"/>
+        <NamedIndividual IRI="#calzini02A9"/>
+        <NamedIndividual IRI="#tessutoRameCotone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#abbinatoCon"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+        <NamedIndividual IRI="#pantalone08B3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#creatoDa"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+        <NamedIndividual IRI="#giorgioArmani"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#fattoDi"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+        <NamedIndividual IRI="#tessutoLanaPura"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+        <NamedIndividual IRI="#lana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#indossatoIn"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+        <NamedIndividual IRI="#inverno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compone"/>
+        <NamedIndividual IRI="#cotone"/>
+        <NamedIndividual IRI="#tessutoCotonePuro"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#fattoDi"/>
+        <NamedIndividual IRI="#leggins1B98"/>
+        <NamedIndividual IRI="#mistoCotoneSintetico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+        <NamedIndividual IRI="#leggins1B98"/>
+        <NamedIndividual IRI="#acrilico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#fattoDi"/>
+        <NamedIndividual IRI="#maglia05A2"/>
+        <NamedIndividual IRI="#tessutoCotonePuro"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+        <NamedIndividual IRI="#maglia05A2"/>
+        <NamedIndividual IRI="#cotone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#indossatoIn"/>
+        <NamedIndividual IRI="#maglia05A2"/>
+        <NamedIndividual IRI="#primavera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#fattoDi"/>
+        <NamedIndividual IRI="#maglia12G6"/>
+        <NamedIndividual IRI="#mistoLanaCotone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#indossatoIn"/>
+        <NamedIndividual IRI="#maglia12G6"/>
+        <NamedIndividual IRI="#autunno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#indossatoIn"/>
+        <NamedIndividual IRI="#maglia12G6"/>
+        <NamedIndividual IRI="#inverno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compostoDa"/>
+        <NamedIndividual IRI="#mistoCotoneSintetico"/>
+        <NamedIndividual IRI="#acrilico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compostoDa"/>
+        <NamedIndividual IRI="#mistoCotoneSintetico"/>
+        <NamedIndividual IRI="#cotone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compostoDa"/>
+        <NamedIndividual IRI="#mistoLanaCotone"/>
+        <NamedIndividual IRI="#cotone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compostoDa"/>
+        <NamedIndividual IRI="#mistoLanaCotone"/>
+        <NamedIndividual IRI="#lana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#fattoDi"/>
+        <NamedIndividual IRI="#pantalone08B3"/>
+        <NamedIndividual IRI="#mistoCotoneSintetico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+        <NamedIndividual IRI="#pantalone08B3"/>
+        <NamedIndividual IRI="#cotone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#indossatoIn"/>
+        <NamedIndividual IRI="#pantalone08B3"/>
+        <NamedIndividual IRI="#primavera"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#fattoDi"/>
+        <NamedIndividual IRI="#pantaloneM876"/>
+        <NamedIndividual IRI="#mistoCotoneSintetico"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+        <NamedIndividual IRI="#pantaloneM876"/>
+        <NamedIndividual IRI="#cotone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#progetta"/>
+        <NamedIndividual IRI="#stilistaArmani"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#progetta"/>
+        <NamedIndividual IRI="#stilistaArmani"/>
+        <NamedIndividual IRI="#scarpa19F3"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compostoDa"/>
+        <NamedIndividual IRI="#tessutoLanaPura"/>
+        <NamedIndividual IRI="#lana"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#idealePer"/>
+        <NamedIndividual IRI="#tessutoLanaPura"/>
+        <NamedIndividual IRI="#inverno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#associato"/>
+        <NamedIndividual IRI="#tessutoPelliccia"/>
+        <NamedIndividual IRI="#inverno"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tessutoDi"/>
+        <NamedIndividual IRI="#tessutoPelliccia"/>
+        <NamedIndividual IRI="#giacca1T56"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compostoDa"/>
+        <NamedIndividual IRI="#tessutoRameCotone"/>
+        <NamedIndividual IRI="#cotone"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#compostoDa"/>
+        <NamedIndividual IRI="#tessutoRameCotone"/>
+        <NamedIndividual IRI="#rame"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#tessutoDi"/>
+        <NamedIndividual IRI="#tessutoRameLana"/>
+        <NamedIndividual IRI="#magliaTermo9999"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#vende"/>
+        <NamedIndividual IRI="#venditoreArmani"/>
+        <NamedIndividual IRI="#maglia05A2"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="#vende"/>
+        <NamedIndividual IRI="#venditoreArmani"/>
+        <NamedIndividual IRI="#maglia12G6"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#calzini02A9"/>
+        <Literal>02A9</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+        <Literal>C3A56</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#composizioneMaterialePrincipale"/>
+        <NamedIndividual IRI="#cappottoC3A56"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#giacca1T56"/>
+        <Literal>1T56</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#leggins1B98"/>
+        <Literal>1B98</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#composizioneMaterialePrincipale"/>
+        <NamedIndividual IRI="#leggins1B98"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#maglia05A2"/>
+        <Literal>05A2</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#composizioneMaterialePrincipale"/>
+        <NamedIndividual IRI="#maglia05A2"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">100</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#maglia12G6"/>
+        <Literal>12G6</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#pantalone08B3"/>
+        <Literal>08B3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#composizioneMaterialePrincipale"/>
+        <NamedIndividual IRI="#pantalone08B3"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">90</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#pantaloneM876"/>
+        <Literal>M876</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#composizioneMaterialePrincipale"/>
+        <NamedIndividual IRI="#pantaloneM876"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">60</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <NamedIndividual IRI="#scarpa19F3"/>
+        <Literal>19F3</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#costo"/>
+        <NamedIndividual IRI="#tessutoCotonePuro"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">150</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#costo"/>
+        <NamedIndividual IRI="#tessutoLanaPura"/>
+        <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">50</Literal>
+    </DataPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="#provenienza"/>
+        <NamedIndividual IRI="#tessutoLanaPura"/>
+        <Literal>Italia</Literal>
+    </DataPropertyAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#idealePer"/>
+        <ObjectProperty IRI="#associato"/>
+    </SubObjectPropertyOf>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#compone"/>
+        <ObjectProperty IRI="#compostoDa"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#fattoDi"/>
+        <ObjectProperty IRI="#tessutoDi"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#haAbbigliamento"/>
+        <ObjectProperty IRI="#indossatoIn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#progetta"/>
+        <ObjectProperty IRI="#progettatoDa"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="#vende"/>
+        <ObjectProperty IRI="#vendutoDa"/>
+    </InverseObjectProperties>
+    <FunctionalObjectProperty>
+        <ObjectProperty abbreviatedIRI="objectrole:isRoleOf"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#fattoDi"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="#progettatoDa"/>
+    </FunctionalObjectProperty>
+    <SymmetricObjectProperty>
+        <ObjectProperty IRI="#abbinatoCon"/>
+    </SymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#abbinatoCon"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#associato"/>
+        <Class IRI="#Tessuto"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#compone"/>
+        <Class IRI="#Materiale"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#compostoDa"/>
+        <Class IRI="#Tessuto"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#creatoDa"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#fattoDi"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#haAbbigliamento"/>
+        <Class IRI="#Stagione"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#idealePer"/>
+        <Class IRI="#TessutoPuro"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#indossatoIn"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#progetta"/>
+        <Class IRI="#Stilista"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#progettatoDa"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tessutoDi"/>
+        <Class IRI="#Tessuto"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#vende"/>
+        <Class IRI="#Venditore"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#vendutoDa"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#abbinatoCon"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#associato"/>
+        <Class IRI="#Stagione"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#compone"/>
+        <Class IRI="#Tessuto"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#compostoDa"/>
+        <Class IRI="#Materiale"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#creatoDa"/>
+        <Class IRI="http://www.ontologydesignpatterns.org/cp/owl/agentrole.owl#Agent"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#fattoDi"/>
+        <Class IRI="#Tessuto"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#haAbbigliamento"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#haMaterialePrincipale"/>
+        <Class IRI="#Materiale"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#idealePer"/>
+        <Class IRI="#Stagione"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#indossatoIn"/>
+        <Class IRI="#Stagione"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#progetta"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#progettatoDa"/>
+        <Class IRI="#Stilista"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tessutoDi"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#vende"/>
+        <Class IRI="#Abbigliamento"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#vendutoDa"/>
+        <Class IRI="#Venditore"/>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#progettatoDa"/>
+            <ObjectProperty abbreviatedIRI="objectrole:isRoleOf"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#creatoDa"/>
+    </SubObjectPropertyOf>
+    <FunctionalDataProperty>
+        <DataProperty IRI="#codiceIdentificativo"/>
+    </FunctionalDataProperty>
+    <DataPropertyDomain>
+        <DataProperty IRI="#codiceIdentificativo"/>
+        <Class IRI="#Abbigliamento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#composizioneMaterialePrincipale"/>
+        <Class IRI="#Abbigliamento"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#costo"/>
+        <Class IRI="#Tessuto"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#provenienza"/>
+        <Class IRI="#Tessuto"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#composizioneMaterialePrincipale"/>
+        <Datatype abbreviatedIRI="xsd:int"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#costo"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#provenienza"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Asserisce che se un abbigliamento è fatto di un tessuto puro composto da materiale naturale animale allora l&apos;abbigliamento va indossato in inverno</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S1</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#TessutoPuro"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#fattoDi"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+            </ObjectPropertyAtom>
+            <ClassAtom>
+                <Class IRI="#MaterialeNaturaleAnimale"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#compostoDa"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#indossatoIn"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+                <NamedIndividual IRI="#inverno"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Asserisce che se un abbigliamento è fatto di un tessuto puro composto da materiale naturale vegetale allora l&apos;abbigliamento va indossato in estate</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S2</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#TessutoPuro"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+            </ClassAtom>
+            <ClassAtom>
+                <Class IRI="#MaterialeNaturaleVegetale"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#fattoDi"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#compostoDa"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#indossatoIn"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+                <NamedIndividual IRI="#estate"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Asserisce che un abbigliamento fatto di un tessuto misto è comunque di qualità se il materiale principale è un materiale naturale e la composizione è maggiore dell&apos; 80%</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S4</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#TessutoMisto"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#haMaterialePrincipale"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m"/>
+            </ObjectPropertyAtom>
+            <BuiltInAtom abbreviatedIRI="swrlb:greaterThan">
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#c"/>
+                <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#integer">80</Literal>
+            </BuiltInAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#tessutoDi"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+            </ObjectPropertyAtom>
+            <DataPropertyAtom>
+                <DataProperty IRI="#composizioneMaterialePrincipale"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#c"/>
+            </DataPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#compone"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#m"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#AbbigliamentoDiQualità"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Asserisce che il tessuto puro è il tessuto di un abbigliamento di qualità</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S3</Literal>
+        </Annotation>
+        <Body>
+            <ClassAtom>
+                <Class IRI="#TessutoPuro"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+            </ClassAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#tessutoDi"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#t"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ClassAtom>
+                <Class IRI="#AbbigliamentoDiQualità"/>
+                <Variable IRI="http://www.semanticweb.org/martina/ontologies/2022/4/untitled-ontology-58#a"/>
+            </ClassAtom>
+        </Head>
+    </DLSafeRule>
+    <DLSafeRule>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="swrla:isRuleEnabled"/>
+            <Literal datatypeIRI="http://www.w3.org/2001/XMLSchema#boolean">true</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+            <Literal>Asserisce che se un abbigliamento è fatto di un tessuto usato per una stagione allora l&apos;abbigliamento va indossato in quella stagione</Literal>
+        </Annotation>
+        <Annotation>
+            <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+            <Literal>S5</Literal>
+        </Annotation>
+        <Body>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#fattoDi"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#t"/>
+            </ObjectPropertyAtom>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#associato"/>
+                <Variable IRI="#t"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Body>
+        <Head>
+            <ObjectPropertyAtom>
+                <ObjectProperty IRI="#indossatoIn"/>
+                <Variable IRI="#a"/>
+                <Variable IRI="#s"/>
+            </ObjectPropertyAtom>
+        </Head>
+    </DLSafeRule>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Abbigliamento</IRI>
+        <Literal xml:lang="it">Capo di abbigliamento con cui ci si veste</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Abbigliamento</IRI>
+        <Literal xml:lang="en">Item of clothing with which you dress</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Abbigliamento</IRI>
+        <Literal xml:lang="it">Abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Abbigliamento</IRI>
+        <Literal xml:lang="en">Clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AbbigliamentoDiQualità</IRI>
+        <Literal xml:lang="it">Capo di abbigliamento ritenuto di qualità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AbbigliamentoDiQualità</IRI>
+        <Literal xml:lang="en">item of clothing condìsidered to be of quality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AbbigliamentoDiQualità</IRI>
+        <Literal xml:lang="it">Abbigliamento di qualità</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AbbigliamentoDiQualità</IRI>
+        <Literal xml:lang="en">Quality clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#AbbigliamentoIntelligente</IRI>
+        <Literal xml:lang="it">Abbigliamento intelligente</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Materiale</IRI>
+        <Literal xml:lang="it">Sostanza usata per produrre tessuti</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Materiale</IRI>
+        <Literal xml:lang="en">Substance used to produce fabrics</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Materiale</IRI>
+        <Literal xml:lang="en">Material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Materiale</IRI>
+        <Literal xml:lang="it">Materiale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeChimico</IRI>
+        <Literal xml:lang="en">Material that doesn&apos;t exist in nature, invented by man through chemical processes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeChimico</IRI>
+        <Literal xml:lang="it">Materiale non esistente in natura, inventato dall&apos;uomo tramite processi chimici</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeChimico</IRI>
+        <Literal xml:lang="en">Chemical material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeChimico</IRI>
+        <Literal xml:lang="it">Materiale chimico</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeNaturale</IRI>
+        <Literal xml:lang="en">Material of natural origin, that is, found in nature</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeNaturale</IRI>
+        <Literal xml:lang="it">Materiale di origine naturale, cioè che si trova in natura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeNaturale</IRI>
+        <Literal xml:lang="it">Materiale naturale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeNaturale</IRI>
+        <Literal xml:lang="en">Natural material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeNaturaleAnimale</IRI>
+        <Literal xml:lang="en">Material found in nature and of animal origin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeNaturaleAnimale</IRI>
+        <Literal xml:lang="it">Materiale che si trova in natura e di origine animale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeNaturaleAnimale</IRI>
+        <Literal xml:lang="en">Animal natural material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeNaturaleAnimale</IRI>
+        <Literal xml:lang="it">Materiale naturale animale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeNaturaleMinerale</IRI>
+        <Literal xml:lang="en">Material found in nature and of mineral origin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeNaturaleMinerale</IRI>
+        <Literal xml:lang="it">Materiale naturale minerale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeNaturaleMinerale</IRI>
+        <Literal xml:lang="en">Mineral natural material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeNaturaleVegetale</IRI>
+        <Literal xml:lang="en">Material found in nature and of plant origin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MaterialeNaturaleVegetale</IRI>
+        <Literal xml:lang="it">Materiale che si trova in natura e di origine vegetale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeNaturaleVegetale</IRI>
+        <Literal xml:lang="it">Materiale naturale vegetale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#MaterialeNaturaleVegetale</IRI>
+        <Literal xml:lang="en">Natural plant material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stilista</IRI>
+        <Literal xml:lang="en">A Concept that classifies an Object as a stylist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Stilista</IRI>
+        <Literal xml:lang="it">Un concetto che classifica un oggetto come uno stilista</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Stilista</IRI>
+        <Literal xml:lang="it">Stilista</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Stilista</IRI>
+        <Literal xml:lang="en">Stylist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tessuto</IRI>
+        <Literal xml:lang="it">Tessuto tessile è un prodotto finito che si ottiene dall&apos;intreccio di fibre tessili di uno o più materiali (cotone, seta ...)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Tessuto</IRI>
+        <Literal xml:lang="en">Textile fabric is a finished product obtained from the intertwining of textile fibers of one or more materials (cotton, silk ...)</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Tessuto</IRI>
+        <Literal xml:lang="en">Fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Tessuto</IRI>
+        <Literal xml:lang="it">Tessuto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TessutoElettronico</IRI>
+        <Literal xml:lang="en">Fabric capable of capturing and analyzing a signal to respond appropriately</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TessutoElettronico</IRI>
+        <Literal xml:lang="it">Tessuto in grado di catturare e analizzare un segnale di rispondere in modo adeguato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TessutoElettronico</IRI>
+        <Literal xml:lang="en">Eletronic fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TessutoElettronico</IRI>
+        <Literal xml:lang="it">Tessuto elettronico</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TessutoMisto</IRI>
+        <Literal xml:lang="it">Tessuto formato dall&apos;intreccio di fibre di più materiali</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TessutoMisto</IRI>
+        <Literal xml:lang="en">fabric formed by the intertwining of fibers of several materials</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TessutoMisto</IRI>
+        <Literal xml:lang="en">Mixed fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TessutoMisto</IRI>
+        <Literal xml:lang="it">Tessuto misto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TessutoPuro</IRI>
+        <Literal xml:lang="en">Fabric formed by the intertwining of fibers of a single material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TessutoPuro</IRI>
+        <Literal xml:lang="it">Tessuto formato dall&apos;intreccio di fibre di un unico materiale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TessutoPuro</IRI>
+        <Literal xml:lang="en">Pure fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#TessutoPuro</IRI>
+        <Literal xml:lang="it">Tessuto puro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Venditore</IRI>
+        <Literal xml:lang="en">A Concept that classifies an Object as a vendor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Venditore</IRI>
+        <Literal xml:lang="it">Un concetto che classifica un oggetto come un venditore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Venditore</IRI>
+        <Literal xml:lang="it">Venditore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#Venditore</IRI>
+        <Literal xml:lang="en">Vendor</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#abbinatoCon</IRI>
+        <Literal xml:lang="en">Relationship used to match clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#abbinatoCon</IRI>
+        <Literal xml:lang="it">Relazione usata per abbinare i capi di abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#abbinatoCon</IRI>
+        <Literal xml:lang="it">abbinato con</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#abbinatoCon</IRI>
+        <Literal xml:lang="en">matched with</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#acrilico</IRI>
+        <Literal xml:lang="it">Acrilico è un termine generico, usato per indicare una famiglia di fibre sintetiche ottenute dalla polimerizzazione dell&apos;acrilonitrile. In particolare, affinché si possa parlare di acrilico è necessario che almeno l&apos;85% in peso dei monomeri presenti nella catena polimerica sia costituito da acrilonitrile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#acrilico</IRI>
+        <Literal xml:lang="en">Acrylic is a generic term used to indicate a family of synthetic fibers obtained from the polymerization of acrylonitrile. In particular, in order to be able to speak of acrylic it is necessary that at least 85% by weight of the monomers present in the polymer chain is made up of acrylonitrile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#acrilico</IRI>
+        <Literal xml:lang="it">acrilico</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#acrilico</IRI>
+        <Literal xml:lang="en">acrylic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="objectrole:hasRole"/>
+        <IRI>#armaniStore</IRI>
+        <IRI>#venditoreArmani</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#armaniStore</IRI>
+        <Literal xml:lang="it">negozio che vende abbigliamento del brand di armani</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#armaniStore</IRI>
+        <Literal xml:lang="en">shop that sells clothing from the armani brand</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#armaniStore</IRI>
+        <Literal xml:lang="en">armani store</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#armaniStore</IRI>
+        <Literal xml:lang="it">armani store</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#associato</IRI>
+        <Literal xml:lang="en">relationship that associates a fabric with a season</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#associato</IRI>
+        <Literal xml:lang="it">relazione che associa un tessuto a una stagione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#associato</IRI>
+        <Literal xml:lang="en">associated</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#associato</IRI>
+        <Literal xml:lang="it">associato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#autunno</IRI>
+        <Literal xml:lang="it">La terza stagione dell&apos;anno compresa, nell&apos;emisfero boreale, tra il 23 settembre e il 22 dicembre e in quello australe tra il 21 marzo e il 21 giugno.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#autunno</IRI>
+        <Literal xml:lang="en">The third season of the year included, in the northern hemisphere, between 23 September and 22 December and in the southern hemisphere between 21 March and 21 June.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#autunno</IRI>
+        <Literal xml:lang="en">autumn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#autunno</IRI>
+        <Literal xml:lang="it">autunno</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#calzini02A9</IRI>
+        <Literal xml:lang="en">garment to cover the foot, short to the ankle or below the knee with identification code 02A9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#calzini02A9</IRI>
+        <Literal xml:lang="it">indumento per coprire il piede, corto fino alla caviglia o fin sotto il ginocchio il cui codice identificativo è 02A9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#calzini02A9</IRI>
+        <Literal xml:lang="it">calzini 02A9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#calzini02A9</IRI>
+        <Literal xml:lang="en">socks 02A9</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cappottoC3A56</IRI>
+        <Literal xml:lang="en">heavy winter garment to be worn over clothes with identification code C3A56</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cappottoC3A56</IRI>
+        <Literal xml:lang="it">indumento invernale, pesante, da portare sopra i vestiti con codice identificativo C3A56</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cappottoC3A56</IRI>
+        <Literal xml:lang="it">cappotto C3A56</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cappottoC3A56</IRI>
+        <Literal xml:lang="en">coat C3A56</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#codiceIdentificativo</IRI>
+        <Literal xml:lang="en">Unique code to identificate the item of clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#codiceIdentificativo</IRI>
+        <Literal xml:lang="it">codice univoco per identificare il capo di abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#codiceIdentificativo</IRI>
+        <Literal xml:lang="en">code</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#codiceIdentificativo</IRI>
+        <Literal xml:lang="it">codice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#compone</IRI>
+        <Literal xml:lang="en">relationship that binds the material used in the composition of a fabric to the fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#compone</IRI>
+        <Literal xml:lang="it">relazione che lega il materiale usato nella composizione di un tessuto al tessuto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#compone</IRI>
+        <Literal xml:lang="it">compone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#compone</IRI>
+        <Literal xml:lang="en">composes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#composizioneMaterialePrincipale</IRI>
+        <Literal xml:lang="it">la composizione in percentuale del materiale principale usato nel tessuto di un abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#composizioneMaterialePrincipale</IRI>
+        <Literal xml:lang="en">the percentage composition of the material used in the fabric of a clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#composizioneMaterialePrincipale</IRI>
+        <Literal xml:lang="it">composizione materiale principale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#composizioneMaterialePrincipale</IRI>
+        <Literal xml:lang="en">main material composition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#compostoDa</IRI>
+        <Literal xml:lang="en">relationship that binds a fabric to the material it is made of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#compostoDa</IRI>
+        <Literal xml:lang="it">relazione che lega un tessuto al materiale di cui è composto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#compostoDa</IRI>
+        <Literal xml:lang="en">composed of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#compostoDa</IRI>
+        <Literal xml:lang="it">composto da</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#costo</IRI>
+        <Literal xml:lang="en">cost per meter of a fabric in euro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#costo</IRI>
+        <Literal xml:lang="it">costo di un tessuto al metro in euro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#costo</IRI>
+        <Literal xml:lang="en">cost</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#costo</IRI>
+        <Literal xml:lang="it">costo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cotone</IRI>
+        <Literal xml:lang="en">Herbaceous or shrubby plant, the seeds of which are covered with a white down used as a textile fiber</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#cotone</IRI>
+        <Literal xml:lang="it">Pianta erbacea o arbustiva, i cui semi sono rivestiti da una peluria bianca usata come fibra tessile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cotone</IRI>
+        <Literal xml:lang="it">cotone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#cotone</IRI>
+        <Literal xml:lang="en">cotton</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#creatoDa</IRI>
+        <Literal xml:lang="en">relationship indicating which clothing is created by an agent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#creatoDa</IRI>
+        <Literal xml:lang="it">relazione che indica quale abbigliamento è creato da un agente</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#creatoDa</IRI>
+        <Literal xml:lang="en">created by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#creatoDa</IRI>
+        <Literal xml:lang="it">creato da</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#estate</IRI>
+        <Literal xml:lang="it">La seconda stagione dell&apos;anno, compresa, nell&apos;emisfero boreale, tra il 21 giugno e il 23 settembre e, in quello australe, tra il 21 dicembre e il 21 marzo; è la stagione in cui si ha la temperatura più elevata dell&apos;anno</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#estate</IRI>
+        <Literal xml:lang="en">The second season of the year, including, in the northern hemisphere, between 21 June and 23 September and, in the southern hemisphere, between 21 December and 21 March; it is the season in which there is the highest temperature of the year</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#estate</IRI>
+        <Literal xml:lang="it">estate</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#estate</IRI>
+        <Literal xml:lang="en">summer</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fattoDi</IRI>
+        <Literal xml:lang="en">relationship that binds clothing to the fabric it is made of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#fattoDi</IRI>
+        <Literal xml:lang="it">relazione che lega l&apos;abbigliamento al tessuto di cui è fatto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#fattoDi</IRI>
+        <Literal xml:lang="it">fatto di</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#fattoDi</IRI>
+        <Literal xml:lang="en">made of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#giacca1T56</IRI>
+        <Literal xml:lang="en">Garment for men or women, generally made of fabric, but also of leather, knitted wool, and the like, which covers the upper part of the body down to the waist, waterproof, or of polyester fabric, often with hood, with closure zip, for sports use with identification code 1T56</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#giacca1T56</IRI>
+        <Literal xml:lang="it">Indumento per uomo o per donna, generalmente di stoffa, ma anche di pelle, di lana a maglia, e sim., che ricopre la parte superiore del corpo fin sotto la vita, impermeabile, o di tessuto poliestere, spesso con cappuccio, a chiusura lampo, per uso sportivo con codice identificativo 1T56</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#giacca1T56</IRI>
+        <Literal xml:lang="it">giacca 1T56</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#giacca1T56</IRI>
+        <Literal xml:lang="en">jacket 1T56</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="objectrole:hasRole"/>
+        <IRI>#giorgioArmani</IRI>
+        <IRI>#stilistaArmani</IRI>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#giorgioArmani</IRI>
+        <Literal xml:lang="en">is an Italian stylist and entrepreneur who founded the company of the same name, one of the most important brands in the world in the fashion field.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#giorgioArmani</IRI>
+        <Literal xml:lang="it">è uno stilista e imprenditore italiano fondatore dell&apos;azienda omonima, uno dei marchi più importanti al mondo nel campo della moda.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#giorgioArmani</IRI>
+        <Literal xml:lang="en">giorgio armani</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#giorgioArmani</IRI>
+        <Literal xml:lang="it">giorgio armani</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#haAbbigliamento</IRI>
+        <Literal xml:lang="en">relationship that binds a season to clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#haAbbigliamento</IRI>
+        <Literal xml:lang="it">relazione che lega una stagione all&apos;abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#haAbbigliamento</IRI>
+        <Literal xml:lang="it">ha abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#haAbbigliamento</IRI>
+        <Literal xml:lang="en">has clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#haMaterialePrincipale</IRI>
+        <Literal xml:lang="en">relationship that binds the clothing to the material, in particular to the main material used in its creation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#haMaterialePrincipale</IRI>
+        <Literal xml:lang="it">relazione che lega l&apos;abbigliamento al materiale, in particolare al materiale principale usato nella sua realizzazione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#haMaterialePrincipale</IRI>
+        <Literal xml:lang="it">ha materiale principale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#haMaterialePrincipale</IRI>
+        <Literal xml:lang="en">has main material</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#idealePer</IRI>
+        <Literal xml:lang="en">relationship that binds the pure fabric ideal for one season to the season</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#idealePer</IRI>
+        <Literal xml:lang="it">relazione che lega il tessuto puro ideale per una stagione alla stagione</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#idealePer</IRI>
+        <Literal xml:lang="en">ideal for</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#idealePer</IRI>
+        <Literal xml:lang="it">ideale per</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#indossatoIn</IRI>
+        <Literal xml:lang="en">relationship that binds clothing in the season in which it is worn</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#indossatoIn</IRI>
+        <Literal xml:lang="it">relazione che lega l&apos;abbigliamento nella stagione in cui è indossato</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#indossatoIn</IRI>
+        <Literal xml:lang="it">indossato in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#indossatoIn</IRI>
+        <Literal xml:lang="en">worn in</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#inverno</IRI>
+        <Literal xml:lang="it">La quarta stagione dell&apos;anno (la più fredda e la meno illuminata), compresa, nell&apos;emisfero boreale, tra il 22 dicembre e il 21 marzo, e in quello australe tra il 21 giugno e il 23 settembre.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#inverno</IRI>
+        <Literal xml:lang="en">The fourth season of the year (the coldest and the least illuminated), including, in the northern hemisphere, between 22 December and 21 March, and in the southern hemisphere between 21 June and 23 September.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#inverno</IRI>
+        <Literal xml:lang="it">inverno</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#inverno</IRI>
+        <Literal xml:lang="en">winter</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#lana</IRI>
+        <Literal xml:lang="it">fibra tessile ricavata dal pelo della pecora e di altri animali</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#lana</IRI>
+        <Literal xml:lang="en">textile fiber obtained from the hair of sheep and other animals</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lana</IRI>
+        <Literal xml:lang="it">lana</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#lana</IRI>
+        <Literal xml:lang="en">wool</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#leggins1B98</IRI>
+        <Literal xml:lang="en">close-fitting trousers, usually made out of a stretchy fabric with identification code 1B98</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#leggins1B98</IRI>
+        <Literal xml:lang="it">pantaloni attillati, solitamente realizzati con un tessuto elastico con codice identificativo 1B98</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#leggins1B98</IRI>
+        <Literal xml:lang="en">leggins 1B98</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#leggins1B98</IRI>
+        <Literal xml:lang="it">leggins1B98</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maglia05A2</IRI>
+        <Literal xml:lang="it">La maglietta, t-shirt o semplicemente tee è un capo di abbigliamento di stoffa, senza bottoni e senza colletto, che ricopre il torso di chi la indossa. Può essere confezionata a maniche lunghe o a maniche corte con codice identificativo 05A2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maglia05A2</IRI>
+        <Literal xml:lang="en">The shirt, t-shirt or simply tee is a piece of clothing made of fabric, without buttons and without a collar, which covers the torso of the wearer. It can be made with long or short sleeves with identification code 05A2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maglia05A2</IRI>
+        <Literal xml:lang="it">maglia05A2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maglia05A2</IRI>
+        <Literal xml:lang="en">shirt05A2</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maglia12G6</IRI>
+        <Literal xml:lang="it">La maglietta, t-shirt o semplicemente tee è un capo di abbigliamento di stoffa, senza bottoni e senza colletto, che ricopre il torso di chi la indossa. Può essere confezionata a maniche lunghe o a maniche corte con codice identificativo 12G6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maglia12G6</IRI>
+        <Literal xml:lang="en">The shirt, t-shirt or simply tee is a piece of clothing made of fabric, without buttons and without a collar, which covers the torso of the wearer. It can be made with long or short sleeves with identification code 12G6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maglia12G6</IRI>
+        <Literal xml:lang="it">maglia12G6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#maglia12G6</IRI>
+        <Literal xml:lang="en">shirt12G6</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#magliaTermo9999</IRI>
+        <Literal xml:lang="en">jersey able to balance heat, with identification code 9999</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#magliaTermo9999</IRI>
+        <Literal xml:lang="it">maglia in grado di equilibrare il calore, con codice identificativo 9999</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#magliaTermo9999</IRI>
+        <Literal xml:lang="it">maglia termo 9999</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#magliaTermo9999</IRI>
+        <Literal xml:lang="en">thermo shirt 9999</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#mistoCotoneSintetico</IRI>
+        <Literal xml:lang="en">mixed fabric formed by the intertwining of cotton and synthetic fibers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#mistoCotoneSintetico</IRI>
+        <Literal xml:lang="it">tessuto misto formato dall&apos;intreccio di fibre di cotone e di sintetico</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#mistoCotoneSintetico</IRI>
+        <Literal xml:lang="it">misto cotone sintetico</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#mistoCotoneSintetico</IRI>
+        <Literal xml:lang="en">synthetic cotton blend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#mistoLanaCotone</IRI>
+        <Literal xml:lang="en">fabric formed by the intertwining of wool and cotton fibers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#mistoLanaCotone</IRI>
+        <Literal xml:lang="it">tessuto formato dall&apos;intreccio di fibre di lana e cotone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#mistoLanaCotone</IRI>
+        <Literal xml:lang="en">cotton wool blend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#mistoLanaCotone</IRI>
+        <Literal xml:lang="it">misto lana cotone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pantalone08B3</IRI>
+        <Literal xml:lang="en">Garment that covers the body below the waist, extending separately on the two legs, up to the instep with the identification code 08B3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pantalone08B3</IRI>
+        <Literal xml:lang="it">Indumento che riveste il corpo inferiormente alla cintola, prolungandosi separatamente sulle due gambe, fino al collo del piede con codice identificativo 08B3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#pantalone08B3</IRI>
+        <Literal xml:lang="it">pantalone 08B3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#pantalone08B3</IRI>
+        <Literal xml:lang="en">pants 08B3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pantaloneM876</IRI>
+        <Literal xml:lang="en">Garment that covers the body below the waist, extending separately on the two legs, up to the instep with the identification code M876</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#pantaloneM876</IRI>
+        <Literal xml:lang="it">Indumento che riveste il corpo inferiormente alla cintola, prolungandosi separatamente sulle due gambe, fino al collo del piede con codice identificativo M876</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#pantaloneM876</IRI>
+        <Literal xml:lang="it">pantalone 08B3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#pantaloneM876</IRI>
+        <Literal xml:lang="en">pants 08B3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#primavera</IRI>
+        <Literal xml:lang="it">La prima stagione dell&apos;anno nell&apos;emisfero boreale, compresa tra il 21 marzo e il 21 giugno; in quello australe è compresa tra il 23 settembre e il 21 dicembre.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#primavera</IRI>
+        <Literal xml:lang="en">The first season of the year in the northern hemisphere, between March 21 and June 21; in the austral one it is between 23 September and 21 December.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#primavera</IRI>
+        <Literal xml:lang="it">primavera</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#primavera</IRI>
+        <Literal xml:lang="en">spring</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#progetta</IRI>
+        <Literal xml:lang="en">relationship indicating which stylist designs clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#progetta</IRI>
+        <Literal xml:lang="it">relazione che indica quale stilista progetta un abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#progetta</IRI>
+        <Literal xml:lang="en">designs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#progetta</IRI>
+        <Literal xml:lang="it">progetta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#progettatoDa</IRI>
+        <Literal xml:lang="en">relationship indicating clothing designed by a stylist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#progettatoDa</IRI>
+        <Literal xml:lang="it">relazione che indica l&apos;abbigliamento progettato da uno stilista</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#progettatoDa</IRI>
+        <Literal xml:lang="en">dedsigns by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#progettatoDa</IRI>
+        <Literal xml:lang="it">progettato da</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#provenienza</IRI>
+        <Literal xml:lang="en">country of origin of the fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#provenienza</IRI>
+        <Literal xml:lang="it">paese di provenienza del tessuto</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#provenienza</IRI>
+        <Literal xml:lang="en">origin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#provenienza</IRI>
+        <Literal xml:lang="it">provenienza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#rame</IRI>
+        <Literal xml:lang="en">Chemical element, metal of light red color, quite hard, very ductile, present in nature both free and in the form of minerals (chalcopyrite, azurite, cuprite, malachite) and also contained in traces in soil, plants and animals, excellent conductor of electricity and heat; it is one of the most widely used metals for containers, machine parts, electrical conduits, coins, and for obtaining alloys such as bronzes and brass.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#rame</IRI>
+        <Literal xml:lang="it">Elemento chimico, metallo di colore rosso-chiaro, abbastanza duro, molto duttile, presente in natura sia libero, sia sotto forma di minerali (calcopirite, azzurrite, cuprite, malachite) e contenuto in tracce anche nel terreno, nelle piante e negli animali, ottimo conduttore dell&apos;elettricità e del calore; è uno dei metalli più largamente usati per recipienti, parti di macchine, condutture elettriche, monete, e per l&apos;ottenimento di leghe come i bronzi e gli ottoni.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#rame</IRI>
+        <Literal xml:lang="en">copper</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#rame</IRI>
+        <Literal xml:lang="it">rame</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#scarpa19F3</IRI>
+        <Literal xml:lang="it">Calzatura che riveste e protegge il piede con codice identificativo 19F3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#scarpa19F3</IRI>
+        <Literal xml:lang="en">Footwear that covers and protects the foot with identification code 19F3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#scarpa19F3</IRI>
+        <Literal xml:lang="it">scarpa 19F3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#scarpa19F3</IRI>
+        <Literal xml:lang="en">shoe 19F3</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#seta</IRI>
+        <Literal xml:lang="en">fiber obtained from the cocoon of the silkworm</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#seta</IRI>
+        <Literal xml:lang="in">fibra che si ricava dal bozzolo del baco da seta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#seta</IRI>
+        <Literal xml:lang="it">seta</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#seta</IRI>
+        <Literal xml:lang="en">silk</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#stilistaArmani</IRI>
+        <Literal xml:lang="en">role of stylist for the armani brand</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#stilistaArmani</IRI>
+        <Literal xml:lang="it">ruolo di stilista per il brand di armani</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#stilistaArmani</IRI>
+        <Literal xml:lang="en">armani stylist</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#stilistaArmani</IRI>
+        <Literal xml:lang="it">stilista armani</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoCotonePuro</IRI>
+        <Literal xml:lang="en">fabric formed by the intertwining of cotton fibers only</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoCotonePuro</IRI>
+        <Literal xml:lang="it">tessuto formato dall&apos;intreccio di fibre di solo cotone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoCotonePuro</IRI>
+        <Literal xml:lang="en">pure cotton fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoCotonePuro</IRI>
+        <Literal xml:lang="it">tessuto cotone puro</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoDi</IRI>
+        <Literal xml:lang="en">relationship indicating which fabric is used to create a clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoDi</IRI>
+        <Literal xml:lang="it">relazione che indica quale tessuto è usato per creare un abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoDi</IRI>
+        <Literal xml:lang="en">fabric of</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoDi</IRI>
+        <Literal xml:lang="it">tessuto di</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoLanaPura</IRI>
+        <Literal xml:lang="en">fabric formed by the intertwining of only wool fibers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoLanaPura</IRI>
+        <Literal xml:lang="it">tessuto formato dall&apos;intreccio di fibre di solo lana</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoLanaPura</IRI>
+        <Literal xml:lang="en">pure wool fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoLanaPura</IRI>
+        <Literal xml:lang="it">tessuto lana pura</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoPelliccia</IRI>
+        <Literal xml:lang="it">il mantello pilifero di molte specie di Mammiferi, ma spec. il prodotto ricavato dalla pelle degli animali morti, trattata in modo da conservare il pelo con le sue caratteristiche di morbidezza e lucentezza</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoPelliccia</IRI>
+        <Literal xml:lang="en">the hair mantle of many mammal species, but spec. the product obtained from the skin of dead animals, treated in such a way as to preserve the hair with its characteristics of softness and shine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoPelliccia</IRI>
+        <Literal xml:lang="en">fur fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoPelliccia</IRI>
+        <Literal xml:lang="it">tessuto pelliccia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoRameCotone</IRI>
+        <Literal xml:lang="en">fabric formed by the intertwining of cotton and copper fibers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoRameCotone</IRI>
+        <Literal xml:lang="it">tessuto formato dall&apos;intreccio di fibre di cotone e rame</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoRameCotone</IRI>
+        <Literal xml:lang="en">copper cotton fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoRameCotone</IRI>
+        <Literal xml:lang="it">tessuto rame cotone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoRameLana</IRI>
+        <Literal xml:lang="en">fabric formed by the intertwining of wool and copper fibers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tessutoRameLana</IRI>
+        <Literal xml:lang="it">tessuto formato dall&apos;intreccio di fibre di lana e rame</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoRameLana</IRI>
+        <Literal xml:lang="en">copper wool fabric</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#tessutoRameLana</IRI>
+        <Literal xml:lang="it">tessuto rame lana</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#vende</IRI>
+        <Literal xml:lang="en">relationship that indicates the vendor selling clothing</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#vende</IRI>
+        <Literal xml:lang="it">relazione che indica il venditore che vende un abbigliamento</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#vende</IRI>
+        <Literal xml:lang="en">sells</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#vende</IRI>
+        <Literal xml:lang="it">vende</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#venditoreArmani</IRI>
+        <Literal xml:lang="en">role played by an agent in selling one or more clothing items of the armani brand</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#venditoreArmani</IRI>
+        <Literal xml:lang="it">ruolo che ha un agente nel vendere uno o più capi di abbigliamento del brand armani</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#venditoreArmani</IRI>
+        <Literal xml:lang="en">armani seller</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#venditoreArmani</IRI>
+        <Literal xml:lang="it">venditore armani</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#vendutoDa</IRI>
+        <Literal xml:lang="en">relationship that links the clothing sold by a seller to the seller</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#vendutoDa</IRI>
+        <Literal xml:lang="it">relazione che lega l&apos;abbigliamento venduto da un venditore al venditore</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#vendutoDa</IRI>
+        <Literal xml:lang="en">sells by</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>#vendutoDa</IRI>
+        <Literal xml:lang="it">venduto da</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
